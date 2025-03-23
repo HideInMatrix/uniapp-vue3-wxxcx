@@ -385,8 +385,6 @@ const measureItemHeights = () => {
 
 // 更新列表项的位置信息
 const calculateVirtualList = (startIndex, endIndex) => {
-  //   console.log('计算虚拟列表:', startIndex, endIndex)
-
   // 防止越界
   startIndex = Math.max(0, startIndex)
   endIndex = Math.min(copyList.value.length, endIndex)
@@ -413,6 +411,7 @@ const calculateVirtualList = (startIndex, endIndex) => {
       itemHeight: itemHeights.value[item.index] || averageHeight.value,
     }
   })
+  console.log('virtualList.value', virtualList.value)
 
   // 计算位置
   updateItemPositions()
